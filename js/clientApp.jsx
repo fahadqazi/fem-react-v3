@@ -11,9 +11,9 @@ const MyFirstComponent = function() {
   return ce(
     'div',
     { id: 'my-first-component' },
-    ce(MyTitle, { title: 'game of thrones', color: 'aquamarine' }),
-    ce(MyTitle, { title: 'breaking bad', color: 'orange' }),
-    ce(MyTitle, { title: 'narcos', colors: 'yellow' })
+    ce(MyTitle, { title: 'Game of Thrones', color: 'aquamarine' }),
+    ce(MyTitle, { title: 'Breaking Bad', color: 'orange' }),
+    ce(MyTitle, { title: 'Narcos', colors: 'yellow' })
   );
 };
 
