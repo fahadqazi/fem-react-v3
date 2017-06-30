@@ -5,7 +5,7 @@ import preload from '../data.json';
 const Search = () =>
   <div className="search">
     {preload.shows.map(show =>
-      <ShowCard {...show}/>
+      <ShowCard key={show.imdbID} {...show}/>
     )}
   </div>;
 
