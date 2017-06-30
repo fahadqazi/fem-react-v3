@@ -9,7 +9,7 @@ module.exports = {
     filename: "bundle.js"
   },
   resolve: {
-    extensions: ['.js', '.jxs', '.json']
+    extensions: ['.js', '.jsx', '.json']
   },
   stats: {
     colors: true,
@@ -19,7 +19,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jxs?$/,
+        enforce: 'pre',
+        test: /\.jsx?$/,
+        loader: 'eslint-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.jsx?$/,
         loader: 'babel-loader'
       }
     ]
