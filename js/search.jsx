@@ -6,7 +6,7 @@ class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchTerm: '',
+      searchTerm: 'black',
     };
     // this.handleSearchTermChange = this.handleSearchTermChange.bind(this);
   }
@@ -21,7 +21,7 @@ class Search extends Component {
     return (
       <div className="search">
         <header>
-          <h1>svideo</h1>
+          <h1>Svideo</h1>
           <input
             type="text"
             placeholder="Search"

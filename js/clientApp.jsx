@@ -1,20 +1,14 @@
 import React from 'react';
-import ReactDom from 'react-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Landing from './landing';
-import Search from './search';
+import { render } from 'react-dom';
+import App from './App';
 
-const FourohFour = () => <h1>404</h1>;
+const renderApp = () => {
+  render(<App />, document.getElementById('app'))
+};
+renderApp();
 
-const App = () =>
-  <BrowserRouter>
-    <div className="app">
-      <Switch>
-        <Route exact path="/" component={Landing} />
-        <Route path="/search" component={Search} />
-        <Route component={FourohFour} />
-      </Switch>
-    </div>
-  </BrowserRouter>;
-
-ReactDom.render(<App />, document.getElementById('app'));
+if (module.hot){
+  module.hot.accept('./App', () => {
+    renderApp();
+  })
+}
