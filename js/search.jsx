@@ -1,13 +1,14 @@
 // @flow
 import React, { Component } from 'react';
 import ShowCard from './showCard';
-import preload from '../data.json';
 
 class Search extends Component {
   state={
     searchTerm: 'black'
   };
-
+  props: {
+    shows: Array<{ title: string, description: string, year: string, imdbID: string, trailer: string, poster: string }>
+  };
   handleSearchTermChange = (event: SyntheticKeyboardEvent & { target: HTMLInputElement}) => {
     this.setState({
       searchTerm: event.target.value,
@@ -27,7 +28,7 @@ class Search extends Component {
           />
         </header>
         <div>
-          {preload.shows
+          {this.props.shows
             .filter(
               show =>
                 `${show.description} ${show.title}`
